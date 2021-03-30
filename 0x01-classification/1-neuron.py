@@ -2,7 +2,7 @@
 import numpy as np
 class Neuron:
     def __init__(self, nx):
-        '''INTEGER CONDITION'''
+        '''INTEGER & >1 CONDITION'''
         if type(nx) != int:
             raise TypeError('nx must be an integer')
         elif nx < 1:
