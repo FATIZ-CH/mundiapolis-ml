@@ -12,6 +12,12 @@ class Neuron:
             self.b = 0
             self.A = 0
              
+    def forward_prop(self, X):
+        """Returns: biais pour le neurone"""
+        x = np.matmul(self.__W, X) + self.__b
+        self.__A = 1 / (1 + np.exp(-x))
+        return self.__A
+           
     @property
     def W(self):
         """Returns: Value of __W"""
@@ -27,10 +33,4 @@ class Neuron:
         """Returns: private instance output"""
         return self.__A
 
-    def forward_prop(self, X):
-        '''Returns: biais pour le neurone
-        '''
-
-        x = np.matmul(self.__W, X) + self.__b
-        self.__A = 1 / (1 + np.exp(-x))
-        return self.__A
+    
